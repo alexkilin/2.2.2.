@@ -15,13 +15,12 @@ public class CarDaoImp implements CarDao{
 
 
     public void add(Car car) {
-        //System.out.println("test save OK");
         sessionFactory.getCurrentSession().save(car);
     }
 
     @SuppressWarnings("unchecked")
-    public List<Car> listThreeCars() {
-       TypedQuery <Car> query = sessionFactory.getCurrentSession().createQuery ("from Car");
+    public List<Car> listCars(int count) {
+       TypedQuery <Car> query = sessionFactory.getCurrentSession().createQuery ("from Car").setMaxResults(count);
        return query.getResultList();
     }
 

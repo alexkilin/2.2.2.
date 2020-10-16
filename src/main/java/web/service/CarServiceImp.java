@@ -7,6 +7,7 @@ import web.dao.CarDao;
 import web.dao.CarDaoImp;
 import web.model.Car;
 
+import javax.annotation.PreDestroy;
 import java.util.List;
 @Service
 public class CarServiceImp implements CarService {
@@ -19,8 +20,8 @@ public class CarServiceImp implements CarService {
     }
 
     @Transactional(readOnly = true)
-    public List<Car> listThreeCars(){
-     return carDao.listThreeCars();
+    public List<Car> getCars(int count){
+        return carDao.listCars(count);
     }
 }
 
