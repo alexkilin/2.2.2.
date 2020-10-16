@@ -23,7 +23,6 @@ public class CarsController {
         Car car3 = new Car ("Hammer",100,1111);
         Car car4 = new Car ("LADA",300,4444);
         Car car5 = new Car ("UAZ",400,5555);
-
         service.add(car1);
         service.add(car2);
         service.add(car3);
